@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	axisY: {
+		title: "Y AXIs"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "X-axis",
+		dataPoints: [      
+			{ y: 300, label: "$name" },
+			{ y: 265,  label: "Saudi" },
+			{ y: 169,  label: "Canada" },
+			{ y: 158,  label: "Iran" },
+			{ y: 14,  label: "Iraq" },
+			{ y: 10, label: "Kuwait" },
+			{ y: 97,  label: "UAE" },
+			{ y: 10,  label: "Russia" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+    X axis label =<div ng-app="myApp" ng-controller="myCtrl"> <input ng-model="name">
+    <h1>{{name}}</h1>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+});
+</script>
+
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
